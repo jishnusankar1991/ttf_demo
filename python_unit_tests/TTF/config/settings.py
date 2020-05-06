@@ -1,0 +1,16 @@
+
+# GET Request
+
+get_url = 'https://api.tekion.xyz/api/integration/vehicleHistory/vehicleSpecs/vinLookup'
+get_api_token = """eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlF6SXdOREF3UXpOQk0wRkVNelZFTmpNMU5UQXhSREEzUXpjM1FqVkZNalUxTVRrME1EbERSQSJ9.eyJuaWNrbmFtZSI6InJrb3RoYXBhbGxpIiwibmFtZSI6InJrb3RoYXBhbGxpQHRla2lvbi5jb20iLCJwaWN0dXJlIjoiaHR0cHM6Ly9zLmdyYXZhdGFyLmNvbS9hdmF0YXIvNDZhM2ZkYjkyODQzYWIzNzZlZTI5NjBkZmU2MThkZjc_cz00ODAmcj1wZyZkPWh0dHBzJTNBJTJGJTJGY2RuLmF1dGgwLmNvbSUyRmF2YXRhcnMlMkZyay5wbmciLCJ1cGRhdGVkX2F0IjoiMjAyMC0wNC0yMFQwODo1OTowNS45NzZaIiwiZW1haWwiOiJya290aGFwYWxsaUB0ZWtpb24uY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsImlzcyI6Imh0dHBzOi8vdGVraW9uLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw1OWYwY2U2YzJiNmYzODI1ZTAyMzU4NmYiLCJhdWQiOiJGNDd2UWRQanZpNFd4UlA0dTBKMkVnVHVsUTdRRXp4eSIsImlhdCI6MTU4NzM3MzE0NiwiZXhwIjoxNTg3NDA5MTQ2fQ.f37ePOFyQVi0vn7PNER-1L_4pNw2UhPEVnFQauhwkTg7ZX9duXZSjIiB9IBJxmoaG8WeJyD9R02xml-QgQPdXVIG-yOBq6CL6RsePw2iTeALTvnMCKURdNHbPfghJmoAGB5xqWk2DpPuhjfArMzI4M5YiBqGQjV5IaIOcmmgKsBHK5UiO90oYjTt3g73qbDDTwLsBxU2TdLmnNOTdBhhGWjxfpUCv1iRePDRp-bEXVyen5SDmbY5YWXBlcHCOt0NmP8vTkVT56tnUq4-Le8UxumWDw3IMwdg0fS4Vu_H-50M0FRPHfBIkGm-h_F0qEHiJnrXXrB-PXyqFW6APE8VWw"""
+get_query = {'vin':'1G1ZD5ST0LF019724', 'includeRaw': 'true'}
+get_headers = {'dealerid': '5', 'roleid': '5', 'tenantid': 'cacargroup', 'tenantname': 'cacargroup', 
+'userid': '51', 'Content-Type': 'application/json', 'tekion-api-token' : get_api_token}
+
+
+#POST Request
+
+post_url = 'https://stageapp.tekioncloud.xyz/api/integration/vehicleHistory/u/v5/vehicleHistory'
+post_api_token = """eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlF6SXdOREF3UXpOQk0wRkVNelZFTmpNMU5UQXhSREEzUXpjM1FqVkZNalUxTVRrME1EbERSQSJ9.eyJuaWNrbmFtZSI6InN0Zy00LXNhIiwibmFtZSI6InN0Zy00LXNhQHRla2lvbi5jb20iLCJwaWN0dXJlIjoiaHR0cHM6Ly9zLmdyYXZhdGFyLmNvbS9hdmF0YXIvMTIwNWI2OTliYjZlNDAwNmUxMTMxMzM3MDY5ZGYxMGE_cz00ODAmcj1wZyZkPWh0dHBzJTNBJTJGJTJGY2RuLmF1dGgwLmNvbSUyRmF2YXRhcnMlMkZzdC5wbmciLCJ1cGRhdGVkX2F0IjoiMjAyMC0wNC0xN1QwODoxMToyNS45ODdaIiwiZW1haWwiOiJzdGctNC1zYUB0ZWtpb24uY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsImlzcyI6Imh0dHBzOi8vdGVraW9uLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw1Y2QxNGVjZWU2ODRiNzBlNGExNTBkMzUiLCJhdWQiOiJGNDd2UWRQanZpNFd4UlA0dTBKMkVnVHVsUTdRRXp4eSIsImlhdCI6MTU4NzExMTA4NiwiZXhwIjoxNTg3MTQ3MDg2fQ.ocKJeRappfUuPYEGfBexzFlb-SCcNKIWj5z_szkmvtMpIUv2nzNoNim9D-AG2KkfUZpldWo6nn2o12QRN-X5ipmjD68WeifJ2igIYVf9t4u8W46zSGuNkwnSCmf1aAb3-0kf1E8kqs41NUxypmCeTA_scI6iy8-QTYkW6d1auLu0YytoZOPTmrSaAxdPaUJZz_Hiyl7O_At6HFCuqUdjV6Go0JeK8wnlvjNRRT_YXZWeoxDrddWAoK43UNCakpgGm81Ubi6s-qo2WK4U4kODuzfmm4yEjp_0RfVFVHrQmE1AlRdp_vF_Ag5zv6EbXcI5OZTDQfKDLT7-jmXPF4ZYxQ"""
+post_data = {'vin': '3GNBACDV3AS600994'}
+post_headers = {'accept': 'application/json, text/plain, */*', 'clientid': 'web', 'dealerid': '4', 'referer': 'https://stageapp.tekioncloud.xyz/ro/repair-orders', 'roleid': '4_ServiceAdvisor', 'tekion-api-token': post_api_token, 'tenantid': '2', 'tenantname': 'stg-cacargroup', 'userid': '72', 'Content-Type': 'application/json', 'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36'}

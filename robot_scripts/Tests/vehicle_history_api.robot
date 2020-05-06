@@ -30,3 +30,14 @@ TC_002: Test for VIN validation from the Vehicle History API
     ${response_vin}=    Get Value From Json    ${json_object}    $.consolidated.VehicleSpecifications.VehicleSpecificationsLine[0].Vehicle.VehicleID
     Log    ${response_vin[0]}
     Should Be Equal As Strings    ${vin}    ${response_vin[0]}
+
+TC_003: Test for Company/OEM validation from the Vehicle History API
+    [Tags]    Regression1
+    ${Headers}=    Create Dictionary    dealerid=5    roleid=5    tenantid=cacargroup    tenantname=cacargroup    userid=51    Content-Type=application/json    tekion-api-token=${api_token}
+    ${query_params}=    Create Dictionary    vin=${vin}    includeRaw=true
+    Create Session    VehicleHistoryApi    ${base_url}
+    ${Response}=    Get Request    VehicleHistoryApi    /vehicleHistory/vehicleSpecs/vinLookup    headers=${Headers}    params=${query_params}
+    ${json_object}=    To Json    ${Response.content}  
+    ${response_vin}=    Get Value From Json    ${json_object}    $.consolidated.VehicleSpecifications.VehicleSpecificationsHeader.ManufacturerParty.SpecifiedOrganization.CompanyName
+    Log    ${response_vin[0]}
+    Should Not Be Equal    ${response_vin[0]}    ${EMPTY}

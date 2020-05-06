@@ -2,7 +2,6 @@
 import time
 import json
 import unittest
-import xlrd
 from libs.common_functions import fire_get_request, fire_post_request
 from config import settings
 from utils.logger import ttf_logger
